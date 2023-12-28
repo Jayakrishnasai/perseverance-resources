@@ -14,7 +14,7 @@
             justify-content: center;
             height: 100vh;
             font-family: 'Frank Ruhl Libre', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #ffa500; /* Netflix red color */
+            color: #e50914; /* Netflix red color */
         }
 
         h1 {
