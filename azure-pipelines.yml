@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: MyBuildAgents
+pool: custom
 
 steps:
 - task: Maven@3
