@@ -1,7 +1,21 @@
-pool:
-  name: build-env-servers
-steps:
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'package'
+stages:
+- stage: Build
+  jobs:
+  - job: BuildJob
+    pool:
+      name: build-env-servers
+    steps:
+    - task: Maven@3
+      inputs:
+        mavenPomFile: 'pom.xml'
+        goals: 'package'
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)/target/'
+        Contents: '*.war'
+        TargetFolder: '${Build.ArtifactStagingDirectory}'
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)/target/'
+        Contents: '*.war'
+        TargetFolder: '${Build.ArtifactStagingDirectory}'
