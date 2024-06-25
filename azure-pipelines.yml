@@ -23,7 +23,7 @@ stages:
       inputs:
         SourceFolder: '$(Build.SourcesDirectory)/target/'
         Contents: 'netflix.war'
-        TargetFolder: '/home/praveen/mypipelinework/2/a/'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - stage: PublishArtifacts
   dependsOn: CopyFiles
