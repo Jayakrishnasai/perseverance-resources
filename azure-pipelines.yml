@@ -13,7 +13,7 @@ stages:
       inputs:
         SourceFolder: '$(Build.SourcesDirectory)/target/'
         Contents: '*.war'
-        TargetFolder: '${Build.ArtifactStagingDirectory}'
+        TargetFolder: '${Build.ArtifactStagingDirectory}/'
 
     - script: |
         echo "Artifact Staging Directory: $BUILD_ARTIFACTSTAGINGDIRECTORY"
