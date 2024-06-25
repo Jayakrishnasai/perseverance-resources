@@ -1,0 +1,7 @@
+pool:
+  name: build-env-servers
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'package'
