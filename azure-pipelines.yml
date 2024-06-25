@@ -12,8 +12,8 @@ stages:
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(Build.SourcesDirectory)/target/'
-        Contents: '*.war'
-        TargetFolder: '${Build.ArtifactStagingDirectory}/*.war'
+        Contents: 'netflix.war'
+        TargetFolder: '${Build.ArtifactStagingDirectory}/'
 
     - script: |
         echo "Artifact Staging Directory: $BUILD_ARTIFACTSTAGINGDIRECTORY"
