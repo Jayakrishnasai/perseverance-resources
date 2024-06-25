@@ -1,6 +1,6 @@
 pool:
-  name: build-env-servers 
-steps:
+  name: build-env-servers
+ steps:
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
