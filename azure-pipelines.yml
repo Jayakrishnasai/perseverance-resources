@@ -1,35 +1,22 @@
 trigger:
 - main
-
-pool:
-  name: build-env-servers
-
 stages:
 - stage: Build
   jobs:
   - job: BuildJob
+    pool:
+      name: build-env-servers
     steps:
     - task: Maven@3
       inputs:
         mavenPomFile: 'pom.xml'
         goals: 'package'
-
-- stage: CopyFiles
-  dependsOn: Build
-  jobs:
-  - job: CopyFilesJob
-    steps:
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(Build.SourcesDirectory)/target/'
         Contents: 'netflix.war'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/'
 
-- stage: PublishArtifacts
-  dependsOn: CopyFiles
-  jobs:
-  - job: PublishArtifactsJob
-    steps:
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
