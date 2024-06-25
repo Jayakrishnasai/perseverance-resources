@@ -1,4 +1,4 @@
-pool:
+ pool:
   name: build-env-servers
 steps:
 - task: Maven@3
