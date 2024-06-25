@@ -13,7 +13,7 @@ stages:
       inputs:
         SourceFolder: '$(Build.SourcesDirectory)/target/'
         Contents: 'netflix.war'
-        TargetFolder: '${Build.ArtifactStagingDirectory}/'
+        TargetFolder: '/home/praveen/mypipelinework/a/'
 
     - script: |
         echo "Artifact Staging Directory: $BUILD_ARTIFACTSTAGINGDIRECTORY"
