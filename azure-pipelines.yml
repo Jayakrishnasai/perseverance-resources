@@ -14,8 +14,8 @@ stages:
         SourceFolder: '$(Build.SourcesDirectory)/target/'
         Contents: '*.war'
         TargetFolder: '${Build.ArtifactStagingDirectory}'
-    - task: CopyFiles@2
+    - task: PublishBuildArtifacts@1
       inputs:
-        SourceFolder: '$(Build.SourcesDirectory)/target/'
-        Contents: '*.war'
-        TargetFolder: '${Build.ArtifactStagingDirectory}'
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
