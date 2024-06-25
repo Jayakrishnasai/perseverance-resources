@@ -17,10 +17,6 @@ stages:
         Contents: 'netflix.war'
         TargetFolder: '/home/praveen/mypipelinework/2/a/'
 
-    - script: |
-        echo "Artifact Staging Directory: $BUILD_ARTIFACTSTAGINGDIRECTORY"
-      displayName: 'Print Artifact Staging Directory'
-
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
