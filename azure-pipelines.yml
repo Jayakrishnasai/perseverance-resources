@@ -1,7 +1,7 @@
 trigger:
 - main
 stages:
-- stage: Build
+- stage: Build-Stage
   jobs:
   - job: BuildJob
     pool:
