@@ -1,1 +1,1 @@
-[![Build Status](https://dev.azure.com/TataComp/TataCliq01/_apis/build/status%2Fpersevcareers.resources-netflix?branchName=main)](https://dev.azure.com/TataComp/TataCliq01/_build/latest?definitionId=2&branchName=main)
+[![Build Status](https://dev.azure.com/TataComp/Netflix-Project/_apis/build/status%2Fpersevcareers.resources-netflix?branchName=azure-pipelines)](https://dev.azure.com/TataComp/Netflix-Project/_build/latest?definitionId=3&branchName=azure-pipelines)
