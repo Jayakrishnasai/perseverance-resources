@@ -14,8 +14,8 @@
             justify-content: center;
             height: 100vh;
             font-family: 'Frank Ruhl Libre', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #e50914; 
-           /* color: #FFFF00;  */
+            /* color: #e50914;  */  /* netflix red color */
+            color: #FFFF00;     /* netflix yellow color */
         }
 
         h1 {
@@ -29,6 +29,6 @@
     </style>
 </head>
 <body>
-    <h1>Netflix</h1>
+    <h1>Netflix - Version1 </h1>
 </body>     
 </html>
