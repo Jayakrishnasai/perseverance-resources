@@ -1,7 +1,7 @@
 trigger:
 - main
 stages:
-- stage: Build and Publish Artifact
+- stage: BuildandPublishArtifact
   jobs:
   - job: Build
     pool:
