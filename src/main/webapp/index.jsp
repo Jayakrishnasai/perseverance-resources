@@ -15,7 +15,8 @@
             height: 100vh;
             font-family: 'Frank Ruhl Libre', 'Helvetica Neue', Helvetica, Arial, sans-serif;
             /* color: #e50914;  */  /* netflix red color */
-            color: #FFFF00;     /* netflix yellow color */
+          /*  color: #FFFF00; */    /* netflix yellow color */
+              color: #0000FF;
         }
 
         h1 {
@@ -29,6 +30,6 @@
     </style>
 </head>
 <body>
-    <h1>Netflix - Version1 </h1>
+    <h1>Netflix - Version2 </h1>
 </body>     
 </html>
