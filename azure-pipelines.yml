@@ -1,7 +1,24 @@
-pool:
-  name: build-env-servers
-steps:
-- task: Maven@4
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'package'
+trigger:
+- main
+stages:
+- stage: Build and Publish Artifact
+  jobs:
+  - job: Build
+    pool:
+      name: build-env-servers
+    steps:
+    - task: Maven@3
+      inputs:
+        mavenPomFile: 'pom.xml'
+        goals: 'package'
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)/target/'
+        Contents: 'netflix.war'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/'
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
