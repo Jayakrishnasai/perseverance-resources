@@ -30,6 +30,6 @@
     </style>
 </head>
 <body>
-    <h1>Netflix - Version2 </h1>
+    <h1>PERSEVERANCE SOFTWARE</h1>
 </body>     
 </html>
