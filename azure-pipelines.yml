@@ -5,7 +5,7 @@ stages:
   jobs:
   - job: Build
     pool:
-      name: build-env-servers
+      name: default
     steps:
     - task: Maven@3
       inputs:
@@ -14,7 +14,7 @@ stages:
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(Build.SourcesDirectory)/target/'
-        Contents: 'netflix.war'
+        Contents: 'perseverance.war'
         TargetFolder: '$(Build.ArtifactStagingDirectory)/'
 
     - task: PublishBuildArtifacts@1
