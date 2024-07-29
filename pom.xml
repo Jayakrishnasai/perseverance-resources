@@ -16,7 +16,7 @@
     </dependency>
   </dependencies>
   <build>
-     <finalName>netflix</finalName>
+     <finalName>perseverance</finalName>
         <plugins>
             <!-- Configure maven-compiler-plugin -->
             <plugin>
