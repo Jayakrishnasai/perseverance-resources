@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix StylePage</title>
+    <title>Perseverance</title>
     <style>
         body {
             margin: 0;
@@ -14,9 +14,8 @@
             justify-content: center;
             height: 100vh;
             font-family: 'Frank Ruhl Libre', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            /* color: #e50914;  */  /* netflix red color */
-          /*  color: #FFFF00; */    /* netflix yellow color */
-              color: #0000FF;
+              color: #FFFF00;    /*  yellow color */
+              color: #0000FF;     /* Blue color */
         }
 
         h1 {
