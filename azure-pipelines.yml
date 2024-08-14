@@ -3,22 +3,29 @@ trigger:
 pool:
   name: build-env1
 stages:
-- stage: BuildandPublishArtifact
+- stage: Build
+  displayName: "Build Stage"
   jobs:
-  - job: Build
+  - job: BuildJob
+    displayName: "Build Job"
     steps:
-    - task: Maven@4
-      inputs:
-        mavenPomFile: 'pom.xml'
-        goals: 'package'
-    - task: CopyFiles@2
-      inputs:
-        SourceFolder: '$(Build.SourcesDirectory)/target/'
-        Contents: 'perseverance.war'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)/'
-
-    - task: PublishBuildArtifacts@1
-      inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'drop'
-        publishLocation: 'Container'
+    - script: echo "Building the project..."
+      displayName: "Build Step"
+- stage: Test
+  displayName: "Test Stage"
+  dependsOn: Build
+  jobs:
+  - job: TestJob
+    displayName: "Test Job"
+    steps:
+    - script: echo "Running tests..."
+      displayName: "Test Step"
+- stage: Deploy
+  displayName: "Deploy Stage"
+  dependsOn: Test
+  jobs:
+  - job: DeployJob
+    displayName: "Deploy Job"
+    steps:
+    - script: echo "Deploying the application..."
+      displayName: "Deploy Step"
