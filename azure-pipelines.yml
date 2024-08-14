@@ -1,31 +1,19 @@
 trigger:
 - main
+
 pool:
-  name: build-env1
-stages:
-- stage: Build
-  displayName: "Build Stage"
-  jobs:
-  - job: BuildJob
-    displayName: "Build Job"
-    steps:
-    - script: echo "Building the project..."
-      displayName: "Build Step"
-- stage: Test
-  displayName: "Test Stage"
-  dependsOn: Build
-  jobs:
-  - job: TestJob
-    displayName: "Test Job"
-    steps:
-    - script: echo "Running tests..."
-      displayName: "Test Step"
-- stage: Deploy
-  displayName: "Deploy Stage"
-  dependsOn: Test
-  jobs:
-  - job: DeployJob
-    displayName: "Deploy Job"
-    steps:
-    - script: echo "Deploying the application..."
-      displayName: "Deploy Step"
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: AzureKeyVault@2
+  inputs:
+    azureSubscription: 'Pay-As-You-Go(afed30c6-9cdc-4705-ac71-e9a6d1d52d8a)'
+    KeyVaultName: 'azurekeyvaultdev01'
+    SecretsFilter: '*'
+    RunAsPreJob: false
+
+- script: |
+    echo "Secret Value: $(version)"
+    # Use the secret in your script or tasks here
+  env:
+    mySecret: $(mySecret)
