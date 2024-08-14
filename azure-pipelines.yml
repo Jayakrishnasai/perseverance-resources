@@ -1,7 +1,7 @@
 trigger:
 - main
 pool:
-  name: build-env  
+  name: build-env1
 stages:
 - stage: BuildandPublishArtifact
   jobs:
