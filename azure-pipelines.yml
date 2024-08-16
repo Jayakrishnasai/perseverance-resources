@@ -1,24 +1,16 @@
-trigger:
-- main
-stages:
-- stage: BuildandPublishArtifact
-  jobs:
-  - job: Build
-    pool:
-      name: default
-    steps:
-    - task: Maven@3
-      inputs:
-        mavenPomFile: 'pom.xml'
-        goals: 'package'
-    - task: CopyFiles@2
-      inputs:
-        SourceFolder: '$(Build.SourcesDirectory)/target/'
-        Contents: 'perseverance.war'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)/'
+pool:
+  name: build-env
 
-    - task: PublishBuildArtifacts@1
-      inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'drop'
-        publishLocation: 'Container'
+steps:
+- task: AzureKeyVault@2
+  inputs:
+    azureSubscription: 'Pay-As-You-Go(afed30c6-9cdc-4705-ac71-e9a6d1d52d8a)'
+    KeyVaultName: 'azurekeyvaultdev01'
+    SecretsFilter: '*'
+    RunAsPreJob: false
+
+- script: |
+    echo "Secret Value: $(version)"
+    # Use the secret in your script or tasks here
+  env:
+    mySecret: $(mySecret)
