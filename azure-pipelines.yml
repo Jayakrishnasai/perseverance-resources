@@ -4,15 +4,14 @@ trigger:
 pool:
   name: build-env
 
-
 variables:
-  nginx_version: '2.4.8'
-  deploy: 'dev'
+- group: shared-variables
 
 jobs:
 - job: UserDefinedVariables
   steps:
   - script: |
-      echo "nginx version : $(nginx_version)"
-      echo "deploying to : $(deploy)"
-    displayName: 'utilizing variables'
+      echo "NGINX version: $(nginx_version)"
+      echo "Deploy environment: $(deploy_env)"
+      echo "Database : $(dbpassword)"
+    displayName: 'Utilizing Variables from Variable Group'  
