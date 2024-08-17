@@ -1,16 +1,18 @@
+trigger:
+- main
+
 pool:
   name: build-env
 
-steps:
-- task: AzureKeyVault@2
-  inputs:
-    azureSubscription: 'Pay-As-You-Go(afed30c6-9cdc-4705-ac71-e9a6d1d52d8a)'
-    KeyVaultName: 'azurekeyvaultdev01'
-    SecretsFilter: '*'
-    RunAsPreJob: false
 
-- script: |
-    echo "Secret Value: $(version)"
-    # Use the secret in your script or tasks here
-  env:
-    mySecret: $(mySecret)
+variables:
+  nginx_version: '2.4.8'
+  deploy: 'dev'
+
+jobs:
+- job: UserDefinedVariables
+  steps:
+  - script: |
+      echo "nginx version : $(nginx_version)"
+      echo "deploying to : $(deploy)"
+    displayName: 'utilizing variables'
