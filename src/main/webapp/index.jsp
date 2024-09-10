@@ -14,8 +14,8 @@
             justify-content: center;
             height: 100vh;
             font-family: 'Frank Ruhl Libre', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          /*    color: #FFFF00; */   /*  yellow color */
-              color: #0000FF;    /* Blue color */
+              color: #FFFF00;    /*  yellow color */
+            /*  color: #0000FF; */   /* Blue color */
         }
 
         h1 {
@@ -29,6 +29,6 @@
     </style>
 </head>
 <body>
-    <h1>PERSEVERANCE SOFTWARE</h1>
+    <h1>PERSEVERANCE SOFTWARE INSTITUTE</h1>
 </body>     
 </html>
