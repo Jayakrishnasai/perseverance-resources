@@ -1,10 +1,9 @@
-#This pipeline is for building the java based code using maven pom.xml 
 #trigger:
 #- main
 stages:
-- stage: Build Automation Using Maven
+- stage: Build_Automation_Using_Maven
   jobs:
-  - job: Application Build
+  - job: Application_Build
     pool:
       name: perseverance-pool
     steps:
