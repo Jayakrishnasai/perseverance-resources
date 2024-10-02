@@ -14,9 +14,9 @@
             justify-content: center;
             height: 100vh;
             font-family: 'Frank Ruhl Libre', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          /*    color: #FFFF00;    */  yellow color */
-              color: #0000FF;   /* Blue color */
-           /*        color: #ee82ee;  */
+              color: #FFFF00;    /*  yellow color */
+            /*  color: #0000FF; */   /* Blue color */
+                /*   color: #ee82ee; */
         }
 
         h1 {
