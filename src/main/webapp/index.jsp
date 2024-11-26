@@ -30,12 +30,8 @@
     </style>
 </head>
 <body>
-    <h1>PERSEVERANCE SOFTWARE INSTITUTE</h1>
-    <h2><em>Students Corner<em></h2>
-    <ol>
-        <li> Student1 </li>
-        <li> Student2 </li>
-        <li> Student3 </li>
-    </ol>
+    <p><h1>Shiva Sai's</h1></p>
+    <p><h2>PERSEVERANCE SOFTWARE INSTITUTE</h2></p>
+
 </body>     
 </html>
