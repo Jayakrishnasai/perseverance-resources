@@ -5,6 +5,6 @@ pool:
 steps:
 - task: Maven@3
   inputs:
-    mavenPomFile: 'pom.xml’
+    mavenPomFile: 'pom.xml'
     goals: 'package'
 
