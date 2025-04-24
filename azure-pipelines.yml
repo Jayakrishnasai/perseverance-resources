@@ -1,7 +1,7 @@
 trigger:
 - main
 pool:
-  name: default
+  name: Dev1
 variables:
   nginx_version: '2.4.8'
   deploy: 'dev'
