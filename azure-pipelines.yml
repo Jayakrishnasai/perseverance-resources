@@ -1,0 +1,10 @@
+trigger:
+- main
+pool:
+  name: Dev1
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml’
+    goals: 'package'
+
