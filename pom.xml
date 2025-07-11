@@ -16,7 +16,7 @@
     </dependency>
   </dependencies>
   <build>
-     <finalName>Persevrence</finalName>
+     <finalName>Persevrence_SSP</finalName>
         <plugins>
             <!-- Configure maven-compiler-plugin -->
             <plugin>
