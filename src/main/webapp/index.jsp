@@ -51,11 +51,12 @@
       justify-content: center;
       gap: 15px;
       margin-top: 10px;
+      animation: fadeIn 2s ease forwards 1.5s;
     }
 
     .character img {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       box-shadow: 0 0 10px #ffffff55;
     }
@@ -131,8 +132,8 @@
       }
 
       .character img {
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
       }
     }
   </style>
@@ -140,16 +141,16 @@
 <body>
 
   <div class="logo"></div>
-  <h1>Shiva Sai's</h1>
-  <h2>Version 3 — Perseverance Software</h2>
+  <h1>Shiva Sai's Perseverance</h1>
+  <h2>Version 3 — Software Institute</h2>
 
   <div class="character">
-    <img src="https://static.wikia.nocookie.net/naruto/images/9/97/Naruto_Uzumaki.png" alt="Naruto Icon">
+    <img src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg?20120125214131" alt="Naruto Logo">
     <h2>Naruto</h2>
   </div>
 
   <div class="character">
-    <img src="https://static.wikia.nocookie.net/onepiece/images/e/e0/Monkey_D._Luffy_Anime_Pre_Timeskip_Infobox.png" alt="Luffy Icon">
+    <img src="https://static.beebom.com/wp-content/uploads/2025/01/Luffys-Hito-Hito-no-Mi-Model-Nika.jpg" alt="Luffy Logo">
     <h2>Monkey D. Luffy</h2>
   </div>
 
