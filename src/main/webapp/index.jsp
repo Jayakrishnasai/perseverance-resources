@@ -45,6 +45,21 @@
       animation: fadeIn 2s ease forwards 1s;
     }
 
+    .character {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .character img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #ffffff55;
+    }
+
     .logo {
       width: 100px;
       height: 100px;
@@ -114,6 +129,11 @@
         width: 70px;
         height: 70px;
       }
+
+      .character img {
+        width: 30px;
+        height: 30px;
+      }
     }
   </style>
 </head>
@@ -122,6 +142,17 @@
   <div class="logo"></div>
   <h1>Shiva Sai's</h1>
   <h2>Version 3 — Perseverance Software</h2>
+
+  <div class="character">
+    <img src="https://static.wikia.nocookie.net/naruto/images/9/97/Naruto_Uzumaki.png" alt="Naruto Icon">
+    <h2>Naruto</h2>
+  </div>
+
+  <div class="character">
+    <img src="https://static.wikia.nocookie.net/onepiece/images/e/e0/Monkey_D._Luffy_Anime_Pre_Timeskip_Infobox.png" alt="Luffy Icon">
+    <h2>Monkey D. Luffy</h2>
+  </div>
+
   <button class="button" onclick="alert('Welcome! Ready to explore.')">Enter</button>
 
 </body>
