@@ -9,7 +9,7 @@
     <artifactId>myapplication</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Perseverance_SSP</name>
+    <finalname>Perseverance_SSP</finalname>
     <url>http://maven.apache.org</url>
 
     <properties>
