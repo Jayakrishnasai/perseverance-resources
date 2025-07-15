@@ -9,152 +9,214 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      color: #e0f7fa;
       height: 100vh;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      font-family: 'Quicksand', sans-serif;
-      color: #e0e0e0;
+      background-image: url('https://wallpapercave.com/wp/wp11291960.jpg'); /* Anime sakura background */
+      background-size: cover;
+      background-position: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4); /* Dim overlay */
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      padding-top: 40px;
       text-align: center;
-      overflow: hidden;
     }
 
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 4em;
+      font-size: 3.5em;
       letter-spacing: 6px;
-      color: #00ffff;
-      text-transform: uppercase;
-      font-weight: 700;
-      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
-      animation: glow 2s ease-in-out infinite alternate;
+      color: #0ff;
+      text-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+      animation: glow 2.5s ease-in-out infinite alternate;
     }
 
     h2 {
-      font-family: 'Quicksand', sans-serif;
-      font-size: 2em;
-      letter-spacing: 1.5px;
+      font-size: 1.8em;
       color: #ffffff;
-      margin: 20px 0;
+      margin: 10px 0;
       opacity: 0;
       animation: fadeIn 2s ease forwards 1s;
-    }
-
-    .character {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 10px;
-      animation: fadeIn 2s ease forwards 1.5s;
-    }
-
-    .character img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #ffffff55;
     }
 
     .logo {
       width: 100px;
       height: 100px;
-      margin-bottom: 20px;
       background-image: url('https://cdn-icons-png.flaticon.com/512/270/270798.png');
       background-size: cover;
       border-radius: 50%;
+      box-shadow: 0 0 20px #00ffff;
+      margin-bottom: 20px;
       animation: popIn 1s ease-out forwards;
     }
 
-    .button {
+    .character-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
       margin-top: 30px;
-      padding: 12px 28px;
-      font-size: 1em;
+      width: 90%;
+      max-width: 1000px;
+      animation: fadeIn 2s ease forwards 1.5s;
+    }
+
+    .character {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 0 12px #0ff2;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .character:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #0ff, 0 0 50px #f0f;
+    }
+
+    .character img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #fff5;
+      margin-bottom: 10px;
+    }
+
+    .button, .music-toggle {
+      margin: 25px 10px 50px;
+      padding: 14px 32px;
+      font-size: 1.1em;
       font-family: 'Orbitron', sans-serif;
       border: none;
       border-radius: 30px;
-      background: #00ffff;
+      background: linear-gradient(135deg, #00ffff, #ff00ff);
       color: #000;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 0 10px #00ffff, 0 0 30px #00ffff;
+      box-shadow: 0 0 15px #00ffff, 0 0 40px #ff00ff;
     }
 
-    .button:hover {
-      background: #0ff;
-      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
-      transform: scale(1.05);
+    .button:hover, .music-toggle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #0ff, 0 0 50px #f0f;
     }
 
     @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
-      }
-      to {
-        text-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
-      }
+      from { text-shadow: 0 0 10px #0ff; }
+      to { text-shadow: 0 0 20px #0ff, 0 0 40px #0ff; }
     }
 
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
 
     @keyframes popIn {
-      0% {
-        transform: scale(0);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 2.5em;
-      }
+      h1 { font-size: 2.2em; }
+      .character img { width: 50px; height: 50px; }
+    }
 
-      h2 {
-        font-size: 1.2em;
-      }
+    /* Sakura Falling Animation */
+    .petal {
+      position: absolute;
+      top: -50px;
+      width: 20px;
+      height: 20px;
+      background: url('https://i.ibb.co/7jD9DnN/sakura.png') no-repeat center;
+      background-size: contain;
+      animation: fall linear infinite;
+      z-index: 0;
+      opacity: 0.8;
+    }
 
-      .logo {
-        width: 70px;
-        height: 70px;
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
       }
-
-      .character img {
-        width: 35px;
-        height: 35px;
+      100% {
+        transform: translateY(110vh) rotate(360deg);
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="logo"></div>
-  <h1>Shiva Sai's Perseverance</h1>
-  <h2>Version 3 — Software Institute</h2>
+  <!-- Sakura Petals (20) -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.style.left = `${Math.random() * 100}%`;
+      petal.style.animationDuration = `${5 + Math.random() * 5}s`;
+      petal.style.animationDelay = `${Math.random() * 10}s`;
+      document.body.appendChild(petal);
+    }
+  </script>
 
-  <div class="character">
-    <img src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg?20120125214131" alt="Naruto Logo">
-    <h2>Naruto</h2>
+  <div class="content">
+    <div class="logo"></div>
+    <h1>Shiva Sai's Perseverance</h1>
+    <h2>Version 3 — Software Institute</h2>
+
+    <div class="character-grid">
+      <div class="character"><img src="https://cdn.staticneo.com/w/naruto/Nprofile2.jpg" alt="Naruto"><h2>Naruto</h2></div>
+      <div class="character"><img src="https://static.beebom.com/wp-content/uploads/2025/01/Luffys-Hito-Hito-no-Mi-Model-Nika.jpg" alt="Luffy"><h2>Luffy</h2></div>
+      <div class="character"><img src="https://staticg.sportskeeda.com/editor/2023/05/c2a62-16837201927512-1920.jpg" alt="Goku"><h2>Goku</h2></div>
+      <div class="character"><img src="https://upload.wikimedia.org/wikipedia/en/d/d1/Itachi_Uchiha.png" alt="Itachi"><h2>Itachi</h2></div>
+      <div class="character"><img src="https://staticg.sportskeeda.com/editor/2023/11/5c961-17009916164393-1920.jpg" alt="Gojo"><h2>Gojo</h2></div>
+      <div class="character"><img src="https://i.pinimg.com/736x/94/3c/9d/943c9d66132825aa5f74a13d9efbe9a8.jpg" alt="Eren"><h2>Eren Yeager</h2></div>
+    </div>
+
+    <button class="button" onclick="alert('Welcome! Ready to explore.')">Enter</button>
+    <button class="music-toggle" onclick="toggleMusic()">🎵 Toggle Music</button>
   </div>
 
-  <div class="character">
-    <img src="https://static.beebom.com/wp-content/uploads/2025/01/Luffys-Hito-Hito-no-Mi-Model-Nika.jpg" alt="Luffy Logo">
-    <h2>Monkey D. Luffy</h2>
-  </div>
+  <!-- Audio -->
+  <audio id="bgMusic" loop>
+    <source src="https://files.catbox.moe/23xpjb.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+  </audio>
 
-  <button class="button" onclick="alert('Welcome! Ready to explore.')">Enter</button>
+  <script>
+    let isPlaying = false;
+    const music = document.getElementById('bgMusic');
+
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+      } else {
+        music.play();
+      }
+      isPlaying = !isPlaying;
+    }
+  </script>
 
 </body>
 </html>
