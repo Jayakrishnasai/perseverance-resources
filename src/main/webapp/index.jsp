@@ -16,7 +16,7 @@
       color: #e0f7fa;
       height: 100vh;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      background-image: url('https://wallpapercave.com/wp/wp11291960.jpg');
+      background-image: url('https://imgix.ranker.com/list_img_v2/1337/2681337/original/the-best-itachi-uchiha-quotes?fit=crop&fm=pjpg&q=80&dpr=1&w=1200&h=630');
       background-size: cover;
       background-position: center;
       overflow: hidden;
