@@ -9,21 +9,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Quicksand', sans-serif;
       color: #e0f7fa;
       height: 100vh;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      background-image: url('https://wallpapercave.com/wp/wp11291960.jpg'); /* Anime sakura background */
+      background-image: url('https://wallpapercave.com/wp/wp11291960.jpg');
       background-size: cover;
       background-position: center;
-      overflow-x: hidden;
+      overflow: hidden;
       position: relative;
     }
 
@@ -31,7 +27,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.4); /* Dim overlay */
+      background: rgba(0, 0, 0, 0.4);
       z-index: 0;
     }
 
@@ -129,21 +125,15 @@
       to { text-shadow: 0 0 20px #0ff, 0 0 40px #0ff; }
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
-    @keyframes popIn {
-      from { transform: scale(0); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes popIn { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
     @media (max-width: 600px) {
       h1 { font-size: 2.2em; }
       .character img { width: 50px; height: 50px; }
     }
 
-    /* Sakura Falling Animation */
+    /* Sakura Petals */
     .petal {
       position: absolute;
       top: -50px;
@@ -157,18 +147,51 @@
     }
 
     @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-      }
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    /* Loader */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+      transition: opacity 1s ease;
+    }
+
+    #loader img {
+      width: 100px;
+      height: 100px;
+      animation: spin 2s linear infinite;
+    }
+
+    #loader h2 {
+      color: #0ff;
+      font-family: 'Orbitron', sans-serif;
+      margin-top: 20px;
+      font-size: 1.5em;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0); }
+      to { transform: rotate(360deg); }
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
 
-  <!-- Sakura Petals (20) -->
+  <!-- Sakura -->
   <script>
     for (let i = 0; i < 20; i++) {
       const petal = document.createElement('div');
@@ -179,6 +202,12 @@
       document.body.appendChild(petal);
     }
   </script>
+
+  <!-- Loader -->
+  <div id="loader">
+    <img src="https://cdn-icons-png.flaticon.com/512/270/270798.png" alt="Loading..." />
+    <h2>Loading Perseverance...</h2>
+  </div>
 
   <div class="content">
     <div class="logo"></div>
@@ -198,7 +227,7 @@
     <button class="music-toggle" onclick="toggleMusic()">🎵 Toggle Music</button>
   </div>
 
-  <!-- Audio -->
+  <!-- Music -->
   <audio id="bgMusic" loop>
     <source src="https://files.catbox.moe/23xpjb.mp3" type="audio/mp3">
     Your browser does not support the audio tag.
@@ -216,6 +245,13 @@
       }
       isPlaying = !isPlaying;
     }
+
+    // Loader Fadeout
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+      }, 2500);
+    });
   </script>
 
 </body>
