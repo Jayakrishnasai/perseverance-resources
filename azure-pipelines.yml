@@ -10,8 +10,6 @@ stages:
   jobs:
   - job: BuildJob
     displayName: "Build Job"
-    pool:
-      name: build-env
     steps:
     - script: echo "Building the project..."
       displayName: "Build Step"
@@ -22,8 +20,6 @@ stages:
   jobs:
   - job: TestJob
     displayName: "Test Job"
-    pool:
-      name: build-env
     steps:
     - script: echo "Running tests..."
       displayName: "Test Step"
@@ -34,8 +30,6 @@ stages:
   jobs:
   - job: DeployJob
     displayName: "Deploy Job"
-    pool:
-      name: build-env
     steps:
     - script: echo "Deploying the application..."
       displayName: "Deploy Step"
