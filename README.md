@@ -30,7 +30,7 @@ You will need to have the following software installed on your machine:
    ```
 2. Navigate to the project directory:
    ```sh
-   cd your_repository
+   cd perseverance-resources
    ```
 
 ## Usage
