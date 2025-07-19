@@ -26,7 +26,7 @@ You will need to have the following software installed on your machine:
 
 1. Clone the repo:
    ```sh
-   git clone https://github.com/your_username/your_repository.git
+   git clone https://github.com/Jayakrishnasai/perseverance-resources.git
    ```
 2. Navigate to the project directory:
    ```sh
