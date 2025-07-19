@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title> Shiva Sai's — Anime Hub</title>
+  <title>Saiteja's AnimeHub</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -148,89 +148,89 @@
 <!-- Home -->
 <section id="home">
   <h1>🌌 Shiva Sai's Perseverance Software Institute</h1>
-    <div class="character-list" id="characterList"></div>
-    <button class="button" onclick="toggleMusic()">🎵 Toggle Music</button>
-    <audio id="BGMusic" loop>
-      <source src="https://cdn.pixabay.com/audio/2023/03/16/audio_67b7fbe57e.mp3" type="audio/mp3">
-    </audio>
-  </section>
+  <div class="character-list" id="characterList"></div>
+  <button class="button" onclick="toggleMusic()">🎵 Toggle Music</button>
+  <audio id="BGMusic" loop>
+    <source src="https://cdn.pixabay.com/audio/2023/03/16/audio_67b7fbe57e.mp3" type="audio/mp3">
+  </audio>
+</section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <h2>🚀 Projects</h2>
-    <p>• Anime Dashboard</p>
-    <p>• Voice-Activated Assistant</p>
-    <p>• JSP + Spring Boot Portal</p>
-  </section>
+<!-- Projects -->
+<section id="projects">
+  <h2>🚀 Projects</h2>
+  <p>• Anime Dashboard</p>
+  <p>• Voice-Activated Assistant</p>
+  <p>• JSP + Spring Boot Portal</p>
+</section>
 
-  <!-- Blog -->
-  <section id="blog">
-    <h2>📚 Blog</h2>
-    <p>Coming soon: DevOps + Anime series!</p>
-  </section>
+<!-- Blog -->
+<section id="blog">
+  <h2>📚 Blog</h2>
+  <p>Coming soon: DevOps + Anime series!</p>
+</section>
 
-  <!-- About -->
-  <section id="about">
-    <h2>👤 About Me</h2>
-    <p>I’m a DevOps enthusiast and anime fan building tech the fun way!</p>
-  </section>
+<!-- About -->
+<section id="about">
+  <h2>👤 About Me</h2>
+  <p>I’m a DevOps enthusiast and anime fan building tech the fun way!</p>
+</section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>📬 Contact</h2>
-    <p>Email: ssp@animedev.com</p>
-    <p>Discord: SuriTech#9021</p>
-  </section>
+<!-- Contact -->
+<section id="contact">
+  <h2>📬 Contact</h2>
+  <p>Email: ssp@animedev.com</p>
+  <p>Discord: SuriTech#9021</p>
+</section>
 
-  <footer>
-    &copy; 2025 Shiva Sai's Perseverance Software Institute — Built with 💙 + 🍥 Anime Energy
-  </footer>
+<footer>
+  &copy; 2025 Shiva Sai's Perseverance Software Institute — Built with 💙 + 🍥 Anime Energy
+</footer>
 
-  <script>
-    const characters = [
-      {
-        name: "Naruto",
-        image: "https://cdn.staticneo.com/w/naruto/Nprofile2.jpg",
-        quote: "Believe it!"
-      },
-      {
-        name: "Luffy",
-        image: "https://static.beebom.com/wp-content/uploads/2025/01/Luffys-Hito-Hito-no-Mi-Model-Nika.jpg",
-        quote: "I'm gonna be the Pirate King!"
-      },
-      {
-        name: "Goku",
-        image: "https://upload.wikimedia.org/wikipedia/en/0/01/Goku_anime.png",
-        quote: "I am the hope of the universe!"
-      },
-      {
-        name: "Itachi",
-        image: "https://i.pinimg.com/736x/ed/b2/3a/edb23a273d4f2e0c845cf1eb1192020b.jpg",
-        quote: "People live their lives bound by what they accept as true."
-      },
-      {
-        name: "Gojo Satoru",
-        image: "https://staticg.sportskeeda.com/editor/2022/10/f1032-16650532473012-1920.jpg",
-        quote: "I'm the strongest."
-      }
-    ];
-
-    const characterList = document.getElementById("characterList");
-    characters.forEach(char => {
-      const card = document.createElement("div");
-      card.className = "character-card";
-      card.innerHTML = `
-        <img src="${char.image}" title="${char.quote}" alt="${char.name}">
-        <h3>${char.name}</h3>
-      `;
-      characterList.appendChild(card);
-    });
-
-    function toggleMusic() {
-      const music = document.getElementById("bgMusic");
-      music.paused ? music.play() : music.pause();
+<script>
+  const characters = [
+    {
+      name: "Naruto",
+      image: "https://cdn.staticneo.com/w/naruto/Nprofile2.jpg",
+      quote: "Believe it!"
+    },
+    {
+      name: "Luffy",
+      image: "https://static.beebom.com/wp-content/uploads/2025/01/Luffys-Hito-Hito-no-Mi-Model-Nika.jpg",
+      quote: "I'm gonna be the Pirate King!"
+    },
+    {
+      name: "Goku",
+      image: "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F02%2Fdragon-ball-super-goku-ultra-instinct-mastered-01.jpg?q=90&w=1400&cbr=1&fit=max",
+      quote: "I am the hope of the universe!"
+    },
+    {
+      name: "Itachi",
+      image: "https://4kwallpapers.com/images/walls/thumbs_3t/19971.jpg",
+      quote: "People live their lives bound by what they accept as true."
+    },
+    {
+      name: "Gojo Satoru",
+      image: "https://wallpapers-clan.com/wp-content/uploads/2023/12/jujutsu-kaisen-grimacing-satoru-gojo-background-scaled.jpg",
+      quote: "I'm the strongest."
     }
-  </script>
+  ];
+
+  const characterList = document.getElementById("characterList");
+  characters.forEach(char => {
+    const card = document.createElement("div");
+    card.className = "character-card";
+    card.innerHTML = `
+      <img src="${char.image}" title="${char.quote}" alt="${char.name}">
+      <h3>${char.name}</h3>
+    `;
+    characterList.appendChild(card);
+  });
+
+  function toggleMusic() {
+    const music = document.getElementById("BGMusic");
+    music.paused ? music.play() : music.pause();
+  }
+</script>
 
 </body>
 </html>
