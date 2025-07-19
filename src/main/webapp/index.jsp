@@ -150,7 +150,7 @@
   <h1>🌌 Shiva Sai's Perseverance Software Institute</h1>
     <div class="character-list" id="characterList"></div>
     <button class="button" onclick="toggleMusic()">🎵 Toggle Music</button>
-    <audio id="bgMusic" loop>
+    <audio id="BGMusic" loop>
       <source src="https://cdn.pixabay.com/audio/2023/03/16/audio_67b7fbe57e.mp3" type="audio/mp3">
     </audio>
   </section>
