@@ -2,14 +2,30 @@
 
 ## Description
 
-This project is a personal portfolio and anime-themed web application. It serves as a showcase for various projects and a blog, all presented with a fun, anime-inspired interface.
+This project is a personal portfolio and anime-themed web application. It serves as a showcase for various projects and a blog, all presented with a fun, anime-inspired interface. The project is built with Java, JSP, and Maven.
 
 ## Features
 
 - A dynamic home page featuring a list of anime characters.
 - Background music with a toggle button.
-- Sections for Projects, Blog, About Me, and Contact Information.
+- Separate pages for Home, Projects, Blog, About Me, and Contact Information.
 - A responsive design that works on different screen sizes.
+
+## Project Structure
+
+The project is structured as a standard Maven web application:
+
+- `src/main/webapp`: Contains the JSP files, CSS, and other web resources.
+  - `index.jsp`: The home page.
+  - `projects.jsp`: The projects page.
+  - `blog.jsp`: The blog page.
+  - `about.jsp`: The about me page.
+  - `contact.jsp`: The contact page.
+  - `header.jsp`: A common header included in all pages.
+  - `footer.jsp`: A common footer included in all pages.
+  - `styles.css`: The stylesheet for the application.
+  - `WEB-INF/web.xml`: The deployment descriptor for the application.
+- `pom.xml`: The Project Object Model file for Maven.
 
 ## Getting Started
 
