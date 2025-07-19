@@ -7,17 +7,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="light-theme">
   <jsp:include page="header.jsp" />
 
   <!-- Home -->
   <section id="home">
     <h1>🌌 Shiva Sai's Perseverance Software Institute</h1>
     <div class="character-list" id="characterList"></div>
-    <button class="button" onclick="toggleMusic()">🎵 Toggle Music</button>
+    <div class="controls">
+      <button class="button" onclick="toggleMusic()">🎵 Toggle Music</button>
+      <button class="button" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
     <audio id="BGMusic" loop>
       <source src="https://cdn.pixabay.com/audio/2023/03/16/audio_67b7fbe57e.mp3" type="audio/mp3">
     </audio>
+    <div class="terminal">
+      <div class="terminal-header">
+        <div class="terminal-buttons">
+          <span class="terminal-button red"></span>
+          <span class="terminal-button yellow"></span>
+          <span class="terminal-button green"></span>
+        </div>
+        <div class="terminal-title">bash</div>
+      </div>
+      <div class="terminal-body">
+        <p class="terminal-prompt">> kubectl get pods</p>
+        <p class="terminal-output">
+          NAME READY STATUS RESTARTS AGE
+          nginx-deployment-6b6bcfc547-qrqd8 1/1 Running 0 2d
+        </p>
+        <p class="terminal-prompt">> git status</p>
+        <p class="terminal-output">
+          On branch main
+          Your branch is up to date with 'origin/main'.
+        </p>
+      </div>
+    </div>
   </section>
 
   <jsp:include page="footer.jsp" />
@@ -65,6 +90,10 @@
   function toggleMusic() {
     const music = document.getElementById("BGMusic");
     music.paused ? music.play() : music.pause();
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
   }
 </script>
 
