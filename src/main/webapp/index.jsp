@@ -178,7 +178,7 @@
   <!-- Contact -->
   <section id="contact">
     <h2>📬 Contact</h2>
-    <p>Email: suri@animedev.com</p>
+    <p>Email: ssp@animedev.com</p>
     <p>Discord: SuriTech#9021</p>
   </section>
 
